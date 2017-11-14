@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#user-list{
+			cursor: pointer;
+		}
+		.active{
+			background: red;
+			color: #fff;
+		}
+	</style>
+</head>
+<body>
+<ul id="user-list">
+	<li>张三</li>
+	<li>李四</li>
+	<li>王五</li>
+	<li>赵六</li>
+</ul>
+<script type="text/javascript">
+	let list = document.querySelector('#user-list');
+	let items = document.querySelectorAll('#user-list > li');
+
+	list.addEventListener('click',function(e){
+		if(e.target.tagName === 'LI'){
+			let item = e.target;
+
+			items.forEach(function(item){
+				item.className = '';
+			});
+				item.className = 'active';
+			console.log(item.innerHTML);
+		}
+	})
+</script>
+</body>
+</html>
